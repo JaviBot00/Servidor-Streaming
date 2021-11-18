@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+	<title>Insertar</title>
+  <link rel="stylesheet" media="all" href="form.css" />
+</head>
+<body>
+<h1>Tienda Web V1.0</h1>
+
+<h2>Añadir un nuevo producto</h2>
+
+<form action="../php/insertarProducto.php"  method="post">
+  <label for="cod">Codigo:</label><br><br>
+  <input type="text" id="cod" name="cod"><br><br>
+
+  <label for="descripcion">Descripcion:</label><br><br>
+  <input type="text" id="descripcion" name="descripcion"><br><br>
+
+  <label for="precio">Precio:</label><br><br>
+  <input type="int" id="precio" name="precio"><br><br>
+
+  <label for="stock">Stock:</label><br><br>
+  <input type="decimal" id="stock" name="stock"><br><br>
+
+  <br><br>
+  <input type="submit" value="Insertar">
+</form><br> 
+
+<a href="../index.html"><img src="1.png"></a>
+</body>
+</html>
