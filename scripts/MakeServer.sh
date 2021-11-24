@@ -16,14 +16,14 @@ sed -i '44,$d'  $confweb
 #Crear Server
 for ((i = 1 ; i <= $nserver ; i++)); do
   docker run -d --name=server$i --network=my-net --ip=172.20.0.$i -v /root/PFC/fuente/:/mnt/ -v /root/PFC/:/usr/local/nginx/html/players alqutami/rtmp-hls
-  echo -e "        server 172.20.0.$i:1935" >> $confstream
-  echo -e "        server 172.20.0.$i:8080" >> $confweb
+  echo -e "        server 172.20.0.$i:1935;" >> $confstream
+  echo -e "        server 172.20.0.$i:8080;" >> $confweb
   echo $nIP $i
 done
 
 #Cerrar configuracion Nginx Proxy Inverso
-echo "  }" >> $confstream
-echo "}" >> $confstream
+echo -e "    }" >> $confstream
+echo -e "}" >> $confstream
 
-echo "  }" >> $confweb
-echo "}" >> $confweb
+echo -e "    }" >> $confweb
+echo -e "}" >> $confweb
