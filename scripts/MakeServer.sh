@@ -3,8 +3,8 @@
 #Variables
 nserver=$1
 nIP="El nº de Server en el que se esta creando es: "
-confstream=/root/PFC/configuracion/pstream/nginx.conf
-confweb=/root/PFC/configuracion/pweb/nginx.conf
+confstream='/root/PFC/configuracion/pstream/nginx.conf'
+confweb='/root/PFC/configuracion/pweb/nginx.conf'
 
 #Crear Red Docker
 docker network create my-net --gateway=172.20.0.111 --subnet=172.20.0.0/16
