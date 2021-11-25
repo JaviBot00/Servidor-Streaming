@@ -17,7 +17,7 @@ sed -i '44,$d'  $confweb
 #Crear Server
 for ((i = 1 ; i <= $nserver ; i++)); do
   echo $nIP $i
-  docker container run -d --name=server$i --network=my-net --ip=172.20.0.$i -v /root/PFC/fuente/:/mnt/ -v /root/PFC/:/usr/local/nginx/html/ alqutami/rtmp-hls:latest
+  docker container run -d --restart always --name=server$i --network=my-net --ip=172.20.0.$i -v /root/PFC/fuente/:/mnt/ -v /root/PFC/:/usr/local/nginx/html/ alqutami/rtmp-hls:latest
   echo -e "        server 172.20.0.$i:1935;" >> $confstream
   echo -e "        server 172.20.0.$i:8080;" >> $confweb
 done
