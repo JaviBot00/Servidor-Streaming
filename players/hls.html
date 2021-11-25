@@ -1,3 +1,10 @@
+<?php
+$localIP = getHostByName(php_uname('n'));
+$NumeroInstancia = shell_exec('hostname -I | cut -d "." -f4');
+$clienteIP = $_SERVER['HTTP_X_FORWARDED_FOR'];
+$ProxyIp = $_SERVER['REMOTE_ADDR'];
+$puertocliente = $_SERVER['REMOTE_PORT']
+?>
 <!DOCTYPE HTML>
 <!--
 	Dimension by HTML5 UP
@@ -47,6 +54,7 @@
 
 				<!-- Footer -->
 					<footer id="footer">
+						<p style="text-align: center"><?php echo 'La ip de esta maquina es :'.$localIP;?></p>
 						<p class="copyright">&copy; JaviBot00 Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 					</footer>
 
