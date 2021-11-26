@@ -1,74 +1,23 @@
-<?php
-$localIP = getHostByName(php_uname('n'));
-$NumeroInstancia = shell_exec('hostname -I | cut -d "." -f4');
-$clienteIP = $_SERVER['HTTP_X_FORWARDED_FOR'];
-$ProxyIp = $_SERVER['REMOTE_ADDR'];
-$puertocliente = $_SERVER['REMOTE_PORT']
-?>
-<!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
-		<title>Jackdaw00.com</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<meta charset="UTF-8">
+		<title>HLS Live Streaming</title>
 		<link href="https://vjs.zencdn.net/7.5.5/video-js.css" rel="stylesheet">
 		<script src="https://vjs.zencdn.net/7.5.5/video.js"></script>
 	</head>
-	<body class="is-preload">
+	<body>
+		<h1>JaviBot`s Streaming</h1>
+		<video id="player" class="video-js vjs-default-skin" width="720" controls preload="auto">
+			<source src="/fuente/hls/test.m3u8" type="application/x-mpegURL" />
+		</video>
+		<script>
+			var player = videojs('#player');
+		</script>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Header -->
-					<header id="header">
-						<div class="inner">
-							<h1>JaviBot’s Gameplays</h1>
-						</div>
-						<div class="content">
-							<div class="inner">
-								<video id="player" class="video-js vjs-default-skin" width="720" controls preload="auto">
-									<source src="/fuente/hls/test.m3u8" type="application/x-mpegURL" />
-								</video>
-								<script>
-									var player = videojs('#player');
-								</script>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="https://portainer.jackdaw00.com/" class="icon brands fa-docker" target="_blank"></a></li>
-								<li><a href="https://riot.im/app/#/login" class="icon brands fa-discord" target="_blank"></a></li>
-								<li><a href="https://www.instagram.com/" class="icon brands fa-instagram" target="_blank"></a></li>
-								<li><a href="https://github.com/" class="icon brands fa-github" target="_blank"></a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
-							</ul>
-						</nav>
-					</header>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<p style="text-align: center"><?php echo 'La ip de esta maquina es :'.$localIP;?></p>
-						<p class="copyright">&copy; JaviBot00 Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
-
-			</div>
-
-		<!-- BG -->
-			<div id="bg"></div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
+		<div id="footer">
+			  <font size="2"> Tareq-Alqutami - 2019</font>
+		</div>
 	</body>
+
 </html>
