@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Acceso LDAP</title>
+        <meta charset="utf-8" />
+<script>
+
+function auth() {
+
+        var xhttp = new XMLHttpRequest();
+
+        var user = document.getElementById('user').value;
+        var pass = document.getElementById('pass').value;
+        var data = "user="+user+"&pass="+pass;
+
+        xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                        var obj = JSON.parse(this.responseText);
+                        alert(obj.debug);
+                }
+        };
+
+        xhttp.open("POST", "login.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(data);
+        window.location.href = "./playlist.php";
+}
+
+</script>
+</head>
+<body>
+        <h1>Acceso al Streaming</h1>
+        <h2>Intoduzca sus datos</h2>
+        <form method="POST">
+                <label>Usuario:</label><br><br>
+                <input id="user" type="text"><br><br>
+
+                <label for="Contraseña">Contraseña:</label><br><br>
+                <input id="pass" type="password" onkeydown="if (event.keyCode == 13) auth()"><br><br>
+
+                <br><br>
+                <input type="button" name="login" value="Acceder" onclick="auth()">
+        </form>
+</body>
