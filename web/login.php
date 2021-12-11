@@ -1,8 +1,8 @@
 <?php
 
 // Credenciales de prueba
-//$user = "admin";
-//$pass = "qwerty";
+$user = "admin";
+$pass = "qwerty";
 
 // Datos de acceso al servidor LDAP
 $host = "192.168.2.222";
