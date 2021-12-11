@@ -58,10 +58,14 @@ else {
         $msg = "Usuario y/o contraseña inválidos";
 }
 
-echo "{\"uid\": \"{$user}\", \"estado\": \"{$status}\", \"nombre\": \"{$userDisplayName}\", \"debug\": \"{$msg}\"}";
+/*echo "{\"uid\": \"{$user}\", \"estado\": \"{$status}\", \"nombre\": \"{$userDisplayName}\", \"debug\": \"{$msg}\"}";
 echo "<br>";
 echo ldap_errno($ad);
 echo "<br>";
 echo "$user";
-echo "$pass";
+echo "$pass";*/
+
+header("Location: .playlist.php");
+die();
+
 ?>
