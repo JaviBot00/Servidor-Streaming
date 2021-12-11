@@ -65,7 +65,7 @@ echo "<br>";
 echo "$user";
 echo "$pass";*/
 
-header("Location: .playlist.php");
+header("Location: playlist.php");
 die();
 
 ?>
