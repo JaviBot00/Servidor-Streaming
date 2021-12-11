@@ -1,4 +1,5 @@
 <?php
+
 //Datos Usuario
 $name =  $_POST['Nombre'];
 $passwd = $_POST['Contraseña'];
@@ -15,15 +16,15 @@ $basedn = "uid=$name,cn=usuarios,ou=grupos,dc=botellamunoz,dc=com";
 
 // Establecer la conexión con el servidor LDAP
 $ds = ldap_connect("ldap://{$host}:{$port}") or die("No se pudo conectar al servidor LDAP.");
+
 if ($ds) {
     ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3); // IMPORTANT
     $result = ldap_bind($ds, $dnbind, $password); //BIND
-    if (!$result)
-    {
-    echo "Not Binded";
+    if (!$result) {
+        echo "Not Binded";
     }
 
-    // Prépareles données
+    // Preparando las Caracteristicas del Usuario
     $ldaprecord['objectClass'][0] = "inetOrgPerson";
     $ldaprecord['objectClass'][1] = "posixAccount";
     $ldaprecord['objectClass'][2] = "shadowAccount";
@@ -39,15 +40,14 @@ if ($ds) {
     $ldaprecord['homedirectory'] = "/home/recorder/";
 
     $r = ldap_add($ds, $basedn, $ldaprecord);
-   if ($r)
-   {
-   echo "Success";
-   }
-   else
-   {
-   echo ldap_errno($ds) ;
+    if ($r) {
+        echo "<h2>Enhorabuena, su resgistro se ha completado</h2>";
+        echo '<a href=login.html style="font-size: 20px;">Volver a la Pagina de Login</a>';
+    } else {
+        echo ldap_errno($ds);
    }
 } else {
-    echo "cannot connect to LDAP server at $AD_server.";
+    echo "No se Puede Conectar al Servidor LDAP en $host.";
 }
+
 ?>

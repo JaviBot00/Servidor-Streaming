@@ -1,8 +1,8 @@
 <?php
 
 // Credenciales de prueba
-$user = "admin";
-$pass = "qwerty";
+//$user = "admin";
+//$pass = "qwerty";
 
 // Datos de acceso al servidor LDAP
 $host = "192.168.2.222";
@@ -66,5 +66,5 @@ else {
 }
 
 // Respuesta en formato JSON
-header('Content-Type: application/json');
+//header('Content-Type: application/json');
 echo "{\"uid\": \"{$user}\", \"estado\": \"{$status}\", \"nombre\": \"{$userDisplayName}\", \"debug\": \"{$msg}\"}";

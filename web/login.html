@@ -3,6 +3,8 @@
 <head>
         <title>Acceso LDAP</title>
         <meta charset="utf-8" />
+
+<!--
 <script>
 
 function auth() {
@@ -27,18 +29,20 @@ function auth() {
 }
 
 </script>
+-->
+
 </head>
 <body>
         <h1>Acceso al Streaming</h1>
         <h2>Intoduzca sus datos</h2>
-        <form method="POST">
+        <form action="login.php" method="post">
                 <label>Usuario:</label><br><br>
                 <input id="user" type="text"><br><br>
 
                 <label for="Contraseña">Contraseña:</label><br><br>
-                <input id="pass" type="password" onkeydown="if (event.keyCode == 13) auth()"><br><br>
+                <input id="pass" type="password"><br><br>
 
                 <br><br>
-                <input type="button" name="login" value="Acceder" onclick="auth()">
+                <input type="submit" name="login" value="Acceder">
         </form>
 </body>
