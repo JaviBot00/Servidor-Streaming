@@ -15,7 +15,8 @@ ldap_set_option($ds, LDAP_OPT_NETWORK_TIMEOUT, 10);
 
 $dn="uid=".$username.",".$ldapconfig['usersdn'].",".$ldapconfig['basedn'];
 if(isset($_POST['user'])){
-if ($bind=ldap_bind($ds, $dn, $pass)) {
+//if ($bind=ldap_bind($ds, $dn, $pass))
+if ($ds == 0) {
   echo("Login correct");//REPLACE THIS WITH THE CORRECT FUNCTION LIKE A REDIRECT;
 } else {
 
