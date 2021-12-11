@@ -14,7 +14,7 @@ ldap_set_option($ds, LDAP_OPT_REFERRALS, 0);
 ldap_set_option($ds, LDAP_OPT_NETWORK_TIMEOUT, 10);
 
 $dn="uid=".$username.",".$ldapconfig['usersdn'].",".$ldapconfig['basedn'];
-if(isset($_POST['user'])){
+//if(isset($_POST['user'])){
 //if ($bind=ldap_bind($ds, $dn, $pass))
 if ($ds == 0) {
   echo("Login correct");//REPLACE THIS WITH THE CORRECT FUNCTION LIKE A REDIRECT;
@@ -22,6 +22,6 @@ if ($ds == 0) {
 
  echo "Login Failed: Please check your username or password";
 }
-}
+//}
 echo ldap_errno($ds);
 ?>
