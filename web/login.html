@@ -36,13 +36,13 @@ function auth() {
         <h1>Acceso al Streaming</h1>
         <h2>Intoduzca sus datos</h2>
         <form action="login.php" method="post">
-                <label>Usuario:</label><br><br>
-                <input id="user" type="text"><br><br>
+                <label for="user">Usuario:</label><br><br>
+                <input type="text" id="user" name="user"><br><br>
 
-                <label for="Contraseña">Contraseña:</label><br><br>
-                <input id="pass" type="password"><br><br>
+                <label for="pass">Contraseña:</label><br><br>
+                <input type="text" id="pass" name="pass"><br><br>
 
                 <br><br>
-                <input type="submit" name="login" value="Acceder">
+                <input type="submit" value="Acceder">
         </form>
 </body>
