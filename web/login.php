@@ -1,8 +1,8 @@
 <?php
 
 // Credenciales de prueba
-//$user = "admin";
-//$pass = "qwerty";
+$user = "admin";
+$pass = "qwerty";
 
 // Datos de acceso al servidor LDAP
 $host = "192.168.2.222";
@@ -23,12 +23,12 @@ $msg = "";
 $userDisplayName = "null";
 
 // Recuperar datos del POST
-//if (isset($_POST['user'])) {
+if (isset($_POST['user'])) {
         $user = $_POST['user'];
-//}
-//if (isset($_POST['pass'])) {
+}
+if (isset($_POST['pass'])) {
         $pass = $_POST['pass'];
-//}
+}
 
 // Establecer la conexión con el servidor LDAP
 $ad = ldap_connect("ldap://{$host}:{$port}") or die("No se pudo conectar al servidor LDAP.");
@@ -44,7 +44,7 @@ if (@ldap_bind($ad, "uid={$user},{$basedn}", $pass)) {
         if ($entries["count"]>0) {
                 // Si hay resultados en la búsqueda
                 $status = 0;
-                if (($entries[0][$displayAttr])) {
+                if (isset($entries[0][$displayAttr])) {
                         // Recuperar el atributo a incorporar en la respuesta
                         $userDisplayName = $entries[0][$displayAttr][0];
                         $msg = "Autenticado como {$userDisplayName}";
@@ -66,5 +66,5 @@ else {
 }
 
 // Respuesta en formato JSON
-//header('Content-Type: application/json');
+header('Content-Type: application/json');
 echo "{\"uid\": \"{$user}\", \"estado\": \"{$status}\", \"nombre\": \"{$userDisplayName}\", \"debug\": \"{$msg}\"}";
