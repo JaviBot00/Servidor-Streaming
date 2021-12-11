@@ -1,8 +1,8 @@
 <?php
 
 // Credenciales de prueba
-$user = "admin";
-$pass = "qwerty";
+//$user = "admin";
+//$pass = "qwerty";
 
 // Datos de acceso al servidor LDAP
 $host = "192.168.2.222";
@@ -23,12 +23,15 @@ $msg = "";
 $userDisplayName = "null";
 
 // Recuperar datos del POST
-if (isset($_POST['user'])) {
+/*if (isset($_POST['user'])) {
         $user = $_POST['user'];
 }
 if (isset($_POST['pass'])) {
         $pass = $_POST['pass'];
-}
+}*/
+
+$user = (isset($_POST['user']));
+$pass = (isset($_POST['pass']));
 
 // Establecer la conexión con el servidor LDAP
 $ad = ldap_connect("ldap://{$host}:{$port}") or die("No se pudo conectar al servidor LDAP.");
