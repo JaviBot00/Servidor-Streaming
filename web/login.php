@@ -22,4 +22,5 @@ if ($bind=ldap_bind($ds, $dn, $pass)) {
  echo "Login Failed: Please check your username or password";
 }
 }
+echo ldap_errno($ds);
 ?>
