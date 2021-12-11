@@ -62,6 +62,6 @@ echo "{\"uid\": \"{$user}\", \"estado\": \"{$status}\", \"nombre\": \"{$userDisp
 echo "<br>";
 echo ldap_errno($ad);
 echo "<br>";
-echo "$user";
-echo "$pass";
+echo $user;
+echo $pass;
 ?>
