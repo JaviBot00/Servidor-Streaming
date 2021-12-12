@@ -9,14 +9,14 @@
     <figure id="video_player">
         <div id="video_container">
         <video controls poster="http://thenewcode.com/assets/images/vid-glacier.jpg" playsinline>
-            <source src="http://thenewcode.com/assets/videos/glacier.mp4" type="video/mp4">
-            <source src="http://thenewcode.com/assets/videos/glacier.webm" type="video/webm">
+            <source src="./grabaciones/javibot00-20211208-020655.mp4" type="video/mp4">
+            <source src="./grabaciones/javibot00-20211208-020655.webm" type="video/webm">
         </video>
         </div>
         <figcaption>
             <ul>
                 <?php
-                $directorio = "/home/recorder/grabaciones";
+                $directorio = "../grabaciones";
                 //carpeta con archivos
                 $contador = 0;
 
