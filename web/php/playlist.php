@@ -8,7 +8,7 @@
 <body>
     <figure id="video_player">
         <video controls width="700px">
-            <source src="/home/recorder/grabaciones/javibot00-20211208-020655.mkv" type="video/mkv">
+            <source src="/home/recorder/grabaciones/javibot00-20211208-020655.avi" type="video/avi">
         </video>
         <figcaption>
             <ul>
@@ -44,7 +44,7 @@
         video=document.querySelector("#video_player video");
         video.removeAttribute('poster');
         source=document.querySelectorAll("#video_player video source");
-        source.src=filename + ".mkv";
+        source.src=filename + ".avi";
         video.load();
         video.play():
     }
