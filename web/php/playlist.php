@@ -8,7 +8,7 @@
 <body>
     <figure id="video_player">
         <video controls width="700px">
-            <source src="/home/recorder/grabaciones/javibot00-20211208-020655.avi" type="video/avi">
+            <source src="/home/recorder/grabaciones/javibot00-20211208-020655.mp4" type="video/mp4">
         </video>
         <figcaption>
             <ul>
@@ -31,21 +31,22 @@
 </html>
 
 <script type="text/javascript">
-    var video_player=document.getElementById("video_player"),
-    links=video_player.getElementByTagName('a');
-    for (var i=0; i<links.length; i++) {
-        links[i].onlclick=handler;
-    }
+var video_player = document.getElementById("video_player"),
+links = video_player.getElementsByTagName('a');
+for (var i=0; i<links.length; i++) {
+    links[i].onclick = handler;
+}
 
-    function handler(e) {
-        e.preventDefault();
-        videotarget=this.getAttribute("href");
-        filename=videotarget.substr(0,videotarget.lastIndexOf('.'))||videotarget;
-        video=document.querySelector("#video_player video");
-        video.removeAttribute('poster');
-        source=document.querySelectorAll("#video_player video source");
-        source.src=filename + ".avi";
-        video.load();
-        video.play():
-    }
+function handler(e) {
+    e.preventDefault();
+    videotarget = this.getAttribute("href");
+    filename = videotarget.substr(0, videotarget.lastIndexOf('.')) || videotarget;
+    video = document.querySelector("#video_player video");
+    video.removeAttribute("controls");
+    video.removeAttribute("poster");
+    source = document.querySelectorAll("#video_player video source");
+    source.src = filename + ".mp4";
+    video.load();
+    video.play();    
+}
 </script>
