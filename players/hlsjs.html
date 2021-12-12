@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>HLS.JS streaming</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<style>
+	body {
+		background-image: url("bg.jpg");
+	}
+
+	.tab {
+		background-color: #f1f1f1;
+	}
+
+	.tab button {
+		background-color: inherit;
+		float: left;
+		border: 1px;
+		border-style: solid;
+		border-color: grey;
+		outline: none;
+		cursor: pointer;
+		padding: 10px 16px;
+		transition: 0.3s;
+		font-size: 18px;
+	}
+
+	.tab button:hover {
+		background-color: #ddd;
+	}
+
+	.tab button.active {
+		background-color: #ccc;
+	}
+
+	.tab a {
+		text-decoration:none;
+		color: black;
+	}
+
+</style>
+<body>
+	<h1>Bienvenido a JaviBot's Gameplays</h1>
+	<h2>Disfrute del Stream</h2>
+	<div class="tab">
+		<button><a href="./hls.html">Opcion 1</a></button>
+		<button><a href="./hlsjs.html">Opcion 2</a></button>
+		<button><a href="./dash.html">Opcion 3</a></button>
+		<button><a href="http://192.168.2.224">Volver al inicio</a></button>
+	</div>
+	<br><br>
+	<br><br>
+	<div class="well">
+		<div class="embed-responsive embed-responsive-16by9">
+			<video id="video" style="max-height: 50%" class="embed-responsive-item video-js vjs-default-skin" controls muted="muted"></video>
+		</div>
+	</div>
+	<script>
+		if(Hls.isSupported()) {
+			var video = document.getElementById('video');
+			var hls = new Hls();
+			hls.loadSource('/fuente/hls/test.m3u8');
+			hls.attachMedia(video);
+			hls.on(Hls.Events.MANIFEST_PARSED,function() {
+				video.play();
+			});
+		}
+	</script>
+</body>
+</html>
