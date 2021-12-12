@@ -41,9 +41,11 @@ if ($ds) {
 
     $r = ldap_add($ds, $basedn, $ldaprecord);
     if ($r) {
-        header("Location: ../html/index.html");
+        header("Location: ../index.html");
         die();
     } else {
+        echo "<h2>Este Usuario ya Existe, Intentelo de Nuevo</h2>";
+        sleep(10);
         header("Location: ../html/registrar.html");
         die();
    }

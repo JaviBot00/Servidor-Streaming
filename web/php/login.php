@@ -41,7 +41,7 @@ if (@ldap_bind($ad, "uid={$user},{$basedn}", $pass)) {
             // Recuperar el atributo a incorporar en la respuesta
             $userDisplayName = $entries[0][$displayAttr][0];
             $msg = "Autenticado como {$userDisplayName}";
-            header("Location: playlist.php.html");
+            header("Location: playlist.php");
             die();
         } else {
             // Si el atributo no está definido para el usuario
@@ -56,7 +56,8 @@ if (@ldap_bind($ad, "uid={$user},{$basedn}", $pass)) {
     // Si falla la autenticación, retornar error
     $msg = "Usuario y/o contraseña inválidos";
 }
-
+echo "<h2>$msg</h2>";
+sleep(10);
 header("Location: login.html");
 die();
 
