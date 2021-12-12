@@ -9,6 +9,7 @@
     <figure id="video_player">
         <video controls width="700px">
             <source src="/home/recorder/grabaciones/javibot00-20211208-020655.mp4" type="video/mp4">
+            <source src="/home/recorder/grabaciones/javibot00-20211208-020655.webm" type="video/webm">
         </video>
         <figcaption>
             <ul>
@@ -45,7 +46,8 @@ function handler(e) {
     video.removeAttribute("controls");
     video.removeAttribute("poster");
     source = document.querySelectorAll("#video_player video source");
-    source.src = filename + ".mp4";
+    source[0].src = filename + ".mp4";
+    source[1].src = filename + ".webm";
     video.load();
     video.play();    
 }
