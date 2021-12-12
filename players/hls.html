@@ -4,9 +4,45 @@
 	<meta charset="UTF-8">
 	<title>HLS Player</title>
 	<link href="https://vjs.zencdn.net/7.5.5/video-js.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="./css/styles.css">
 	<script src="https://vjs.zencdn.net/7.5.5/video.js"></script>
 </head>
+<style>
+	body {
+		background-image: url("bg.jpg");
+	}
+
+	.tab {
+		background-color: #f1f1f1;
+	}
+
+	.tab button {
+		background-color: inherit;
+		float: left;
+		border: 1px;
+		border-style: solid;
+		border-color: grey;
+		outline: none;
+		cursor: pointer;
+		padding: 10px 16px;
+		transition: 0.3s;
+		font-size: 18px;
+	}
+
+	.tab button:hover {
+		background-color: #ddd;
+	}
+
+	.tab button.active {
+		background-color: #ccc;
+	}
+
+	.tab a {
+		text-decoration:none;
+		color: black;
+	}
+
+</style>
 <body>
 	<h1>Bienvenido a JaviBot's Gameplays</h1>
 	<h2>Disfrute del Stream</h2>
