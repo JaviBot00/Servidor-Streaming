@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>HLS Player</title>
+	<link href="https://vjs.zencdn.net/7.5.5/video-js.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<script src="https://vjs.zencdn.net/7.5.5/video.js"></script>
+</head>
+<body>
+	<h1>Bienvenido a JaviBot's Gameplays</h1>
+	<h2>Disfrute del Stream</h2>
+	<div class="tab">
+		<button><a href="./hls.html">Opcion 1</a></button>
+		<button><a href="./hlsjs.html">Opcion 2</a></button>
+		<button><a href="./dash.html">Opcion 3</a></button>
+	</div>
+	<br><br>
+	<br><br>
+	<video id="player" class="video-js vjs-default-skin" width="720" controls preload="auto">
+		<source src="/fuente/hls/test.m3u8" type="application/x-mpegURL" />
+	</video>
+	<script>
+		var player = videojs('#player');
+	</script>
+</body>
+</html>
