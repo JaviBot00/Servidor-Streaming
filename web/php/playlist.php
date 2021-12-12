@@ -3,6 +3,7 @@
 <head>
     <title>Listar Archivos</title>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
 <script type="text/javascript">
     var video_player=document.getElementById("video_player"),
@@ -31,15 +32,15 @@
         <figcaption>
             <ul>
                 <?php
-                $directorio = "/home/recorder/grabaciones/";
-                #carpeta con archivos
+                $directorio = "/home/recorder/grabaciones";
+                //carpeta con archivos
                 $contador = 0;
 
                 $archivos = glob("$directorio/*");
-                introducir el código aquí
+                //introducir el código aquí
 
                 foreach ($archivos as $archivo) {   
-                     echo "<li><a href=/home/recorder/grabaciones/$archivo>$archivo</a></li>";
+                     echo '<li><a href=/home/recorder/grabaciones/$archivo>$archivo</a></li>' ;
                     }
                 ?>                
             </ul>
