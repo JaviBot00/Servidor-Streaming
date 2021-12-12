@@ -5,29 +5,10 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
-<script type="text/javascript">
-    var video_player=document.getElementById("video_player"),
-    links=video_player.getElementByTagName('a');
-    for (var i = 0; i < links.length; i++) {
-        links[i].onlclick=handler;
-    }
-
-    function handler(e) {
-        e.preventDefault();
-        videotarget=this.getAttribute("href");
-        filename=videotarget.substr(0,videotarget.lastIndexOf('.'))||videotarget;
-        video=document.querySelector("#video_player video");
-        video.removeAttribute('poster');
-        source=document.querySelectorAll("#video_player video source");
-        source[0].src=filename + ".mkv";
-        video.load();
-        video.play():
-    }
-</script>
 <body>
     <figure id="video_player">
         <video controls width="700px">
-            <source src="video1.mkv" type="video/mkv">
+            <source src="/home/recorder/grabaciones/javibot00-20211208-020655.mkv" type="video/mkv">
         </video>
         <figcaption>
             <ul>
@@ -39,12 +20,32 @@
                 $archivos = glob("$directorio/*");
                 //introducir el código aquí
 
-                foreach ($archivos as $archivo) {   
-                     echo '<li><a href=/home/recorder/grabaciones/$archivo>$archivo</a></li>' ;
+                foreach ($archivos as $archivo) {
+                     echo "<li><a href=$archivo>$archivo</a></li>" ;
                     }
-                ?>                
+                ?>
             </ul>
         </figcaption>
     </figure>
 </body>
 </html>
+
+<script type="text/javascript">
+    var video_player=document.getElementById("video_player"),
+    links=video_player.getElementByTagName('a');
+    for (var i=0; i<links.length; i++) {
+        links[i].onlclick=handler;
+    }
+
+    function handler(e) {
+        e.preventDefault();
+        videotarget=this.getAttribute("href");
+        filename=videotarget.substr(0,videotarget.lastIndexOf('.'))||videotarget;
+        video=document.querySelector("#video_player video");
+        video.removeAttribute('poster');
+        source=document.querySelectorAll("#video_player video source");
+        source.src=filename + ".mkv";
+        video.load();
+        video.play():
+    }
+</script>
