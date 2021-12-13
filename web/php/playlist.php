@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Bienvenido a JaviBot's Gameplays</h1>
-    <h2>Elija un video para descargar1</h2>
+    <h2>Elija un video para descargar</h2>
     <ol reversed>
         <?php
         function lista_archivos($carpeta) {
