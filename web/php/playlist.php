@@ -26,7 +26,7 @@
                                 }
                                 closedir($dir);
                         }
-                }else{
+                } else {
                         echo 'No Existe la carpeta';
                 }
         }
@@ -34,5 +34,8 @@
         lista_archivos("../grabaciones");
         ?>
     </ol>
+    <div class="tab1">
+        <button><a href="../index.html">Volver al inicio</a></button>
+    </div>
 </body>
 </html>
