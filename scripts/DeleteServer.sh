@@ -18,6 +18,11 @@ docker container rm pstream
 docker container stop pweb
 docker container rm pweb
 
+#Borrando Docker Recorder
+echo "Borrando Docker Recorder"
+docker container stop recorder
+docker container rm recorder
+
 #Borra Volumenes no Usados
 echo "Borra Volumenes no Usados"
 docker volume prune -f
