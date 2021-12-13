@@ -8,7 +8,7 @@
 <body>
     <h1>Bienvenido a JaviBot's Gameplays</h1>
     <h2>Elija un video para descargar1</h2>
-    <ul>
+    <ol reversed>
         <?php
         function lista_archivos($carpeta) {
                 if (is_dir($carpeta)) {
@@ -16,14 +16,12 @@
                                 while (($archivo = readdir($dir)) !== false) {
                                         if ($archivo != '.' && $archivo != '..') {
                                                 $nuevaRuta = $carpeta.$archivo.'/';
-                                                echo '<li>';
                                                 if (is_dir($nuevaRuta)) {
                                                         echo '<b>'.$nuevaRuta.'</b>';
                                                         lista_archivos($nuevaRuta);
                                                 } else {
                                                         echo "<li><a href=$carpeta/$archivo>$archivo</a></li>";
                                                 }
-                                                 '</li>';
                                         }
                                 }
                                 closedir($dir);
@@ -35,6 +33,6 @@
 
         lista_archivos("../grabaciones");
         ?>
-    </ul>
+    </ol>
 </body>
 </html>
