@@ -6,7 +6,7 @@ $passwd = $_POST['Contraseña'];
 $uidnumber = strlen($name)+strlen($passwd)+rand(10,1000);
 
 // Datos de acceso al servidor LDAP
-$host = "192.168.2.222";
+$host = "192.168.2.210";
 $port = "389";
 $dnbind = "cn=admin,dc=botellamunoz,dc=com";
 $password = "qwerty";
