@@ -5,7 +5,7 @@ $user = $_POST['user'];
 $pass = $_POST['pass'];
 
 // Datos de acceso al servidor LDAP
-$host = "192.168.2.222";
+$host = "192.168.2.210";
 $port = "389";
 
 // Conexto donde se encuentran los usuarios
